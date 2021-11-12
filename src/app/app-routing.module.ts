@@ -9,7 +9,7 @@ import { NuevoProductoComponent } from './producto/nuevo-producto.component';
 import { EditarProductoComponent } from './producto/editar-producto.component';
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './auth/login.component';
-import { RegistroComponent } from './auth/registro.component';
+import { RegistroComponent } from './usuario/registro.component';
 import { ProdGuardService } from './guards/prod-guard.service';
 
 
@@ -17,7 +17,7 @@ import { ProdGuardService } from './guards/prod-guard.service';
 const routes: Routes = [
   { path: '', component: IndexComponent },
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
-  { path: 'registro', component: RegistroComponent, canActivate: [LoginGuard] },
+  { path: 'registro', component: RegistroComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin', 'user'] } },
   { path: 'sendemail', component: SendEmailComponent, canActivate: [LoginGuard] },
   { path: 'change-password/:tokenPassword', component: ChangePasswordComponent, canActivate: [LoginGuard] },
   { path: 'lista', component: ListaProductoComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin', 'user'] } },

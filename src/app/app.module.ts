@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './auth/login.component';
-import { RegistroComponent } from './auth/registro.component';
+import { RegistroComponent } from './usuario/registro.component';
 import { MenuComponent } from './menu/menu.component';
 import { IndexComponent } from './index/index.component';
 import { SendEmailComponent } from './changepassword/send-email.component';
