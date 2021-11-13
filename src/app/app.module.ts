@@ -21,6 +21,7 @@ import { MenuComponent } from './menu/menu.component';
 import { IndexComponent } from './index/index.component';
 import { SendEmailComponent } from './changepassword/send-email.component';
 import { ChangePasswordComponent } from './changepassword/change-password.component';
+import { ListaUsuariosComponent } from './usuario/lista-usuarios.component';
 
 
 
@@ -36,7 +37,8 @@ import { ChangePasswordComponent } from './changepassword/change-password.compon
     MenuComponent,
     IndexComponent,
     SendEmailComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    ListaUsuariosComponent
   ],
   imports: [
     BrowserModule,
