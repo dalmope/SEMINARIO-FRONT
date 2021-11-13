@@ -29,6 +29,7 @@ export class ListaUsuariosComponent implements OnInit {
     this.usuarioService.lista().subscribe(
       data => {
         this.usuarios = data;
+        console.log(data);
       },
       err => {
         console.log(err);
@@ -39,13 +40,13 @@ export class ListaUsuariosComponent implements OnInit {
   borrar(id: number) {
     this.usuarioService.delete(id).subscribe(
       data => {
-        this.toastr.success('Producto Eliminado', 'OK', {
+        this.toastr.success('Usuario Eliminado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.cargarUsuarios();
       },
       err => {
-        this.toastr.error(err.error.mensaje, 'Fail', {
+        this.toastr.error(err.error.mensaje, 'No se pudo borrar el Usuario', {
           timeOut: 3000, positionClass: 'toast-top-center',
         });
       }

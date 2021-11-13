@@ -19,7 +19,7 @@
         <td>{{usuario.roles[0].id}}</td>
         <td><button class="btn btn-outline-primary" routerLink="/detalle/{{usuario.id}}"><i class="far fa-eye"></i> Ver</button></td>
         <td *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/editar/{{usuario.id}}"><i class="far fa-edit"></i> Editar</button></td>
-        <td *ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="(usuario.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
+        <td *ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="borrar(usuario.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
       </tr>
     </tbody>
   </table>
