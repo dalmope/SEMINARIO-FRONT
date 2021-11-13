@@ -15,41 +15,41 @@ export class ListaUsuariosComponent implements OnInit {
   isAdmin = false;
 
   constructor(
-    private usuarioServide : UsuarioService,
+    private usuarioService : UsuarioService,
     private toastr: ToastrService,
     private tokenService: TokenService
   ) { }
 
   ngOnInit() {
-    //this.cargarProductos();
+    this.cargarUsuarios();
     this.isAdmin = this.tokenService.isAdmin();
   }
 
-//   cargarProductos(): void {
-//     this.usuarioServide.lista().subscribe(
-//       data => {
-//         this.usuarios = data;
-//       },
-//       err => {
-//         console.log(err);
-//       }
-//     );
-//   }
+  cargarUsuarios(): void {
+    this.usuarioService.lista().subscribe(
+      data => {
+        this.usuarios = data;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
 
-//   borrar(id: number) {
-//     this.usuarioServide.delete(id).subscribe(
-//       data => {
-//         this.toastr.success('Producto Eliminado', 'OK', {
-//           timeOut: 3000, positionClass: 'toast-top-center'
-//         });
-//         this.cargarProductos();
-//       },
-//       err => {
-//         this.toastr.error(err.error.mensaje, 'Fail', {
-//           timeOut: 3000, positionClass: 'toast-top-center',
-//         });
-//       }
-//     );
-//   }
+  borrar(id: number) {
+    this.usuarioService.delete(id).subscribe(
+      data => {
+        this.toastr.success('Producto Eliminado', 'OK', {
+          timeOut: 3000, positionClass: 'toast-top-center'
+        });
+        this.cargarUsuarios();
+      },
+      err => {
+        this.toastr.error(err.error.mensaje, 'Fail', {
+          timeOut: 3000, positionClass: 'toast-top-center',
+        });
+      }
+    );
+  }
 
 }
