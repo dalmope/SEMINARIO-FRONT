@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { Producto } from '../models/producto';
-import { ProductoService } from '../service/producto.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { UsuarioService } from '../service/usuario.service';
+import { NuevoUsuario } from '../models/nuevo-usuario';
 
 @Component({
-  selector: 'app-editar-producto',
-  templateUrl: './editar-producto.component.html',
-  styleUrls: ['./editar-producto.component.css']
+  selector: 'app-editar-usuario',
+  templateUrl: './editar-usuario.component.html',
+  styleUrls: ['./editar-usuario.component.css']
 })
-export class EditarProductoComponent implements OnInit {
+export class EditarUsuarioComponent implements OnInit {
 
-  producto: Producto = null;
+  usuario: NuevoUsuario = null;
 
 
   constructor(
-    private productoService: ProductoService,
+    private usuarioService: UsuarioService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router
@@ -23,9 +23,9 @@ export class EditarProductoComponent implements OnInit {
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.params.id;
-    this.productoService.detail(id).subscribe(
+    this.usuarioService.detail(id).subscribe(
       data => {
-        this.producto = data;
+        this.usuario = data;
       
       },
       err => {
@@ -39,12 +39,12 @@ export class EditarProductoComponent implements OnInit {
 
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params.id;
-    this.productoService.update(id, this.producto).subscribe(
+    this.usuarioService.update(id, this.usuario).subscribe(
       data => {
-        this.toastr.success('Producto Actualizado', 'OK', {
+        this.toastr.success('Usuario Actualizado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
-        this.router.navigate(['/lista']);
+        this.router.navigate(['/usuarios']);
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {

@@ -11,13 +11,14 @@ import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './auth/login.component';
 import { RegistroComponent } from './usuario/registro.component';
 import { ProdGuardService } from './guards/prod-guard.service';
-
+import { ListaUsuariosComponent } from './usuario/lista-usuarios.component';
 
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
   { path: 'usuarios/registro', component: RegistroComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin'] } },
+  { path: 'usuarios', component: ListaUsuariosComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin'] } },
   { path: 'sendemail', component: SendEmailComponent, canActivate: [LoginGuard] },
   { path: 'change-password/:tokenPassword', component: ChangePasswordComponent, canActivate: [LoginGuard] },
   { path: 'lista', component: ListaProductoComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin', 'user'] } },
