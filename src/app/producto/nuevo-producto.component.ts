@@ -17,7 +17,7 @@ export class NuevoProductoComponent implements OnInit {
   descripcion: string;
   idCategoria = 1;
   idProveedor = 1;
-  iva: number = 0;
+  iva: number;
   retencion: number;;
 
   constructor(
