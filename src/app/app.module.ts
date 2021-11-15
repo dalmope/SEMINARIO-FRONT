@@ -22,6 +22,9 @@ import { IndexComponent } from './index/index.component';
 import { SendEmailComponent } from './changepassword/send-email.component';
 import { ChangePasswordComponent } from './changepassword/change-password.component';
 import { ListaUsuariosComponent } from './usuario/lista-usuarios.component';
+import { EditarUsuarioComponent } from './usuario/editar-usuario.component';
+import { ListaCategoriasComponent } from './categoria/lista-categorias.component';
+import { NuevaCategoriaComponent } from './categoria/nueva-categoria.component';
 
 
 
@@ -38,7 +41,10 @@ import { ListaUsuariosComponent } from './usuario/lista-usuarios.component';
     IndexComponent,
     SendEmailComponent,
     ChangePasswordComponent,
-    ListaUsuariosComponent
+    ListaUsuariosComponent,
+    EditarUsuarioComponent,
+    ListaCategoriasComponent,
+    NuevaCategoriaComponent
   ],
   imports: [
     BrowserModule,

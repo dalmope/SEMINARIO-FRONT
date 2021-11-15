@@ -29,7 +29,6 @@ export class ListaUsuariosComponent implements OnInit {
     this.usuarioService.lista().subscribe(
       data => {
         this.usuarios = data;
-        console.log(data);
       },
       err => {
         console.log(err);

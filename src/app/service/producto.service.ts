@@ -26,6 +26,7 @@ export class ProductoService {
   }
 
   public save(producto: Producto): Observable<any> {
+    console.log(producto);
     return this.httpClient.post<any>(this.productoURL + 'create', producto);
   }
 

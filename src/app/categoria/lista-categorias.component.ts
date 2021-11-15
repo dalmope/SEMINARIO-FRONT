@@ -1,34 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { Producto } from '../models/producto';
-import { ProductoService } from '../service/producto.service';
 import { ToastrService } from 'ngx-toastr';
 import { TokenService } from '../service/token.service';
+import { Categoria } from '../models/categoria';
+import { CategoriaService } from '../service/categoria.service';
 
 @Component({
-  selector: 'app-lista-producto',
-  templateUrl: './lista-producto.component.html',
-  styleUrls: ['./lista-producto.component.css']
+  selector: 'app-lista-categoria',
+  templateUrl: './lista-categorias.component.html',
+  styleUrls: ['./lista-categorias.component.css']
 })
-export class ListaProductoComponent implements OnInit {
+export class ListaCategoriasComponent implements OnInit {
 
-  productos: Producto[] = [];
+  categorias: Categoria[] = [];
   isAdmin = false;
 
   constructor(
-    private productoService: ProductoService,
+    private categoriaService: CategoriaService,
     private toastr: ToastrService,
     private tokenService: TokenService
   ) { }
 
   ngOnInit() {
-    this.cargarProductos();
+    this.cargarCategorias();
     this.isAdmin = this.tokenService.isAdmin();
   }
 
-  cargarProductos(): void {
-    this.productoService.lista().subscribe(
+  cargarCategorias(): void {
+    this.categoriaService.getCategorias().subscribe(
       data => {
-        this.productos = data;
+        this.categorias = data;
       },
       err => {
         console.log(err);
@@ -37,12 +37,12 @@ export class ListaProductoComponent implements OnInit {
   }
 
   borrar(id: number) {
-    this.productoService.delete(id).subscribe(
+    this.categoriaService.deleteCategoria(id).subscribe(
       data => {
-        this.toastr.success('Producto Eliminado', 'OK', {
+        this.toastr.success('Categoria Eliminada', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
-        this.cargarProductos();
+        this.cargarCategorias();
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {

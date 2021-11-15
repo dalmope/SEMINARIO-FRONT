@@ -12,6 +12,9 @@ import { LoginComponent } from './auth/login.component';
 import { RegistroComponent } from './usuario/registro.component';
 import { ProdGuardService } from './guards/prod-guard.service';
 import { ListaUsuariosComponent } from './usuario/lista-usuarios.component';
+import { EditarUsuarioComponent } from './usuario/editar-usuario.component';
+import { NuevaCategoriaComponent } from './categoria/nueva-categoria.component';
+import { ListaCategoriasComponent } from './categoria/lista-categorias.component';
 
 
 const routes: Routes = [
@@ -19,6 +22,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
   { path: 'usuarios/registro', component: RegistroComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin'] } },
   { path: 'usuarios', component: ListaUsuariosComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin'] } },
+  { path: 'categorias/create', component: NuevaCategoriaComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin'] } },
+  { path: 'categorias', component: ListaCategoriasComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin'] } },
+  { path: 'usuarios/editar/:id', component: EditarUsuarioComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin'] } },
   { path: 'sendemail', component: SendEmailComponent, canActivate: [LoginGuard] },
   { path: 'change-password/:tokenPassword', component: ChangePasswordComponent, canActivate: [LoginGuard] },
   { path: 'lista', component: ListaProductoComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin', 'user'] } },
