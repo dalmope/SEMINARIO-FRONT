@@ -14,11 +14,12 @@ export class NuevoProductoComponent implements OnInit {
   nombre = '';
   precio: number = null;
   cantidad: number = null;
+  cantidad_minima: number;
   descripcion: string;
-  idCategoria = 1;
+  idCategoria: number;
   idProveedor = 1;
   iva: number;
-  retencion: number;;
+  retencion: number;
 
   constructor(
     private productoService: ProductoService,
@@ -31,9 +32,10 @@ export class NuevoProductoComponent implements OnInit {
 
   onCreate(): void {
     const producto = new Producto(this.nombre, this.precio, this.cantidad,
-      this.descripcion, this.idCategoria, this.idProveedor, this.iva, this.retencion);
+      this.cantidad_minima, this.iva, this.retencion, this.idCategoria);
     this.productoService.save(producto).subscribe(
       data => {
+        console.log(producto);
         this.toastr.success('Producto Creado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });

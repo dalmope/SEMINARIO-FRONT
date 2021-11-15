@@ -8,11 +8,11 @@
                     <input type="text" class="form-control" id="nombre" name="nombre"
                     [(ngModel)]="nombre" required>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="descripcion">Descripcion</label>
                     <input type="text" class="form-control" id="descripcion" name="descripcion"
                     [(ngModel)]="descripcion" required>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label for="precio">Precio</label>
                     <input type="number" class="form-control" id="precio" name="precio"
@@ -24,14 +24,24 @@
                     [(ngModel)]="cantidad" required>
                 </div>
                 <div class="form-group">
+                    <label for="cantidad_minima">Cantidad Minima</label>
+                    <input type="number" class="form-control" id="cantidad_minima" name="cantidad_minima"
+                    [(ngModel)]="cantidad_minima" required>
+                </div>
+                <div class="form-group">
                     <label for="iva">Iva</label>
                     <input type="number" class="form-control" id="iva" name="iva"
                     [(ngModel)]="iva" required>
                 </div>
                 <div class="form-group">
-                    <label for="retencion">Iva</label>
+                    <label for="retencion">Retencion</label>
                     <input type="number" class="form-control" id="retencion" name="retencion"
                     [(ngModel)]="retencion" required>
+                </div>
+                <div class="form-group">
+                    <label for="idCategoria">Categoria</label>
+                    <input type="number" class="form-control" id="idCategoria" name="idCategoria"
+                    [(ngModel)]="idCategoria" required>
                 </div>
                 <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
                     <i class="fas fa-plus-circle"></i> Crear</button>
