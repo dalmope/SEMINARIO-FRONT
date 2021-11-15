@@ -18,6 +18,7 @@ export const environment = {
   authURL: 'http://localhost:8080/auth/',
   changePasswordURL: 'http://localhost:8080/email-password/',
   usuariosURL: 'http://localhost:8080/usuarios/',
+  categoriaURL: 'http://localhost:8080/categorias/',
 };
 
 /*
