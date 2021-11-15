@@ -3,21 +3,21 @@ export class Producto {
     nombre: string;
     precio: number;
     cantidad: number;
-    descripcion: string;
-    idCatetoria: number;
-    idProveedor: number;
+    cantidad_minima: number;
     iva: number;
     retencion: number; 
+    idCategoria: number;
+    // idProveedor: number;
+    // descripcion: string;
 
-    constructor(nombre: string, precio: number, cantidad: number, descripcion: string, idCatetoria: number, idProveedor: number, iva: number, retencion: number) {
+    constructor(nombre: string, precio: number, cantidad: number, cantidad_minima: number, iva: number, retencion: number, idCategoria: number) {
         this.nombre = nombre;
         this.precio = precio;
         this.cantidad = cantidad;
-        this.descripcion = descripcion;
-        this.idCatetoria = idCatetoria;
-        this.idProveedor = idProveedor;
+        this.cantidad_minima = cantidad_minima;
         this.iva = iva;
         this.retencion = retencion;
+        this.idCategoria = idCategoria;
     }
 
 
