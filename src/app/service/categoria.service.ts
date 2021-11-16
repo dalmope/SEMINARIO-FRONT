@@ -23,7 +23,6 @@ import { Categoria } from "../models/categoria";
     }
 
     public postCategoria(categoria: Categoria): Observable<any> {
-      console.log(categoria);
       return this.httpClient.post<any>(this.categoriaURL, categoria);
     }
 
