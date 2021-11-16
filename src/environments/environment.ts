@@ -14,7 +14,7 @@
 // Variables for localhost
 export const environment = {
   production: false,
-  productoURL: 'http://localhost:8080/producto/',
+  productoURL: 'http://localhost:8080/productos/',
   authURL: 'http://localhost:8080/auth/',
   changePasswordURL: 'http://localhost:8080/email-password/',
   usuariosURL: 'http://localhost:8080/usuarios/',

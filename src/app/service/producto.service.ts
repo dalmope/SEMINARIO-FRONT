@@ -14,26 +14,26 @@ export class ProductoService {
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Producto[]> {
-    return this.httpClient.get<Producto[]>(this.productoURL + 'lista');
+    return this.httpClient.get<Producto[]>(this.productoURL);
   }
 
   public detail(id: number): Observable<Producto> {
-    return this.httpClient.get<Producto>(this.productoURL + `detail/${id}`);
+    return this.httpClient.get<Producto>(this.productoURL + `${id}`);
   }
 
   public detailName(nombre: string): Observable<Producto> {
-    return this.httpClient.get<Producto>(this.productoURL + `detailname/${nombre}`);
+    return this.httpClient.get<Producto>(this.productoURL + `${nombre}`);
   }
 
   public save(producto: Producto): Observable<any> {
-    return this.httpClient.post<any>(this.productoURL + 'create', producto);
+    return this.httpClient.post<any>(this.productoURL, producto);
   }
 
   public update(id: number, producto: Producto): Observable<any> {
-    return this.httpClient.put<any>(this.productoURL + `update/${id}`, producto);
+    return this.httpClient.put<any>(this.productoURL + `${id}`, producto);
   }
 
   public delete(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.productoURL + `delete/${id}`);
+    return this.httpClient.delete<any>(this.productoURL + `${id}`);
   }
 }
