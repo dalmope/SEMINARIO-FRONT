@@ -35,7 +35,7 @@ a:hover {
 Sidebar
 ----------------*/
 .sidebar {
-  position: absolute;
+  position: relative;
   width: 17em;
   height: 100%;
   top: 0;
@@ -52,29 +52,18 @@ Sidebar
   padding: 0.75em 1em;
 }
 
-.btn-menu-right:after {
-  content: ">";
-  font-family: ionicons;
-  font-size: 1em;
-  width: 10px;
-  color: #fff;
-  position: absolute;
-  right: 0.75em;
-  top: 25%;
-}
-
 /* -------------
 Sidebar Nav
 ----------------*/
 .sidebar-nav {
-  position: fixed;
+  /* position: fixed; */
   background-color: #19222a;
   height: 100%;
   font-weight: 400;
   font-size: 1.2em;
   overflow: auto;
   padding-bottom: 6em;
-  z-index: 9;
+  /* z-index: 9; */
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   /* -------------

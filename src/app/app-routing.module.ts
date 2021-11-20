@@ -15,10 +15,15 @@ import { ListaUsuariosComponent } from './usuario/lista-usuarios.component';
 import { EditarUsuarioComponent } from './usuario/editar-usuario.component';
 import { NuevaCategoriaComponent } from './categoria/nueva-categoria.component';
 import { ListaCategoriasComponent } from './categoria/lista-categorias.component';
+import { MenuComponent } from './menu/menu.component';
+
+import { AsideComponent } from './aside/aside.component';
 
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
+  { path: '', component: MenuComponent },
+  { path: '', component: AsideComponent },
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
   { path: 'usuarios/registro', component: RegistroComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin'] } },
   { path: 'usuarios', component: ListaUsuariosComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin'] } },

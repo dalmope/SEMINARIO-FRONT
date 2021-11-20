@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
   <a class="navbar-brand" href="#"> <i class="fas fa-home"></i></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav mr-auto">
+  </button> -->
+  <div class="" id="navbarNav">
+    <!-- <ul class="navbar-nav mr-auto">
       <li class="nav-item" *ngIf="isLogged">
         <a class="nav-link" routerLink="/lista"><i class="far fa-list-alt"></i> Productos</a>
       </li>
@@ -15,9 +15,9 @@
       <li class="nav-item" *ngIf="isAdmin">
         <a class="nav-link" routerLink="/categorias"><i class="fas fa-users"></i> Categorias</a>
       </li>
-    </ul>
+    </ul> -->
 
-    <form class="form-inline my-2 my-lg-0">
+    <form class="d-flex my-2 my-lg-0">
       <button *ngIf="!isLogged" class="btn btn-outline-success my-2 my-sm-0" routerLink="/login" type="submit">
         <i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
         <button *ngIf="isLogged" class="btn btn-outline-danger my-2 my-sm-0" (click)="onLogOut()" type="reset">
@@ -27,3 +27,4 @@
 
   </div>
 </nav>
+

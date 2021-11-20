@@ -18,6 +18,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './auth/login.component';
 import { RegistroComponent } from './usuario/registro.component';
 import { MenuComponent } from './menu/menu.component';
+import { AsideComponent } from './aside/aside.component';
 import { IndexComponent } from './index/index.component';
 import { SendEmailComponent } from './changepassword/send-email.component';
 import { ChangePasswordComponent } from './changepassword/change-password.component';
@@ -25,6 +26,7 @@ import { ListaUsuariosComponent } from './usuario/lista-usuarios.component';
 import { EditarUsuarioComponent } from './usuario/editar-usuario.component';
 import { ListaCategoriasComponent } from './categoria/lista-categorias.component';
 import { NuevaCategoriaComponent } from './categoria/nueva-categoria.component';
+
 
 
 
@@ -38,13 +40,15 @@ import { NuevaCategoriaComponent } from './categoria/nueva-categoria.component';
     LoginComponent,
     RegistroComponent,
     MenuComponent,
+    AsideComponent,
     IndexComponent,
     SendEmailComponent,
     ChangePasswordComponent,
     ListaUsuariosComponent,
     EditarUsuarioComponent,
     ListaCategoriasComponent,
-    NuevaCategoriaComponent
+    NuevaCategoriaComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
