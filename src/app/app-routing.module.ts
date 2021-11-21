@@ -19,6 +19,7 @@ import { MenuComponent } from './menu/menu.component';
 
 import { AsideComponent } from './aside/aside.component';
 import { DetalleUsuarioComponent } from './usuario/detalle-usuario.component';
+import { ListaProductoCategoria } from './producto/lista-producto-categoria';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'usuarios', component: ListaUsuariosComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin'] } },
   { path: 'categorias/create', component: NuevaCategoriaComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin'] } },
   { path: 'categorias', component: ListaCategoriasComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin'] } },
+  { path: 'lista/:id', component: ListaProductoCategoria, canActivate: [ProdGuardService], data: { expectedRol: ['admin', 'user'] } },
   { path: 'sendemail', component: SendEmailComponent, canActivate: [LoginGuard] },
   { path: 'change-password/:tokenPassword', component: ChangePasswordComponent, canActivate: [LoginGuard] },
   { path: 'lista', component: ListaProductoComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin', 'user'] } },

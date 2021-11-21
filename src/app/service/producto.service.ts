@@ -36,4 +36,9 @@ export class ProductoService {
   public delete(id: number): Observable<any> {
     return this.httpClient.delete<any>(this.productoURL + `${id}`);
   }
+
+  public productByCategoria(id: number): Observable<any> {
+    return this.httpClient.get<any>(this.productoURL + `categoria/${id}`);
+  }
+
 }

@@ -27,6 +27,7 @@ import { EditarUsuarioComponent } from './usuario/editar-usuario.component';
 import { ListaCategoriasComponent } from './categoria/lista-categorias.component';
 import { NuevaCategoriaComponent } from './categoria/nueva-categoria.component';
 import { DetalleUsuarioComponent } from './usuario/detalle-usuario.component';
+import { ListaProductoCategoria } from './producto/lista-producto-categoria';
 
 
 
@@ -39,6 +40,7 @@ import { DetalleUsuarioComponent } from './usuario/detalle-usuario.component';
     NuevoProductoComponent,
     EditarProductoComponent,
     DetalleUsuarioComponent,
+    ListaProductoCategoria,
     LoginComponent,
     RegistroComponent,
     MenuComponent,

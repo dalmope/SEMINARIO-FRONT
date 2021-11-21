@@ -16,7 +16,7 @@
           <tr *ngFor="let categoria of categorias">
             <td>{{categoria.id}}</td>
             <td>{{categoria.nombre}}</td>
-            <td><button class="btn btn-outline-primary" routerLink="/detalle/{{categoria.id}}"><i class="far fa-eye"></i> Ver</button></td>
+            <td><button class="btn btn-outline-primary" routerLink="/lista/{{categoria.id}}"><i class="far fa-eye"></i> Ver</button></td>
             <td *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/editar/{{categoria.id}}"><i class="far fa-edit"></i> Editar</button></td>
             <td *ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="borrar(categoria.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
           </tr>

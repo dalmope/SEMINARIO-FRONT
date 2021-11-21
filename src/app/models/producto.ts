@@ -6,18 +6,18 @@ export class Producto {
     cantidad_minima: number;
     iva: number;
     retencion: number; 
-    idCategoria: number;
+    categoria: number;
     // idProveedor: number;
     // descripcion: string;
 
-    constructor(nombre: string, precio: number, cantidad: number, cantidad_minima: number, iva: number, retencion: number, idCategoria: number) {
+    constructor(nombre: string, precio: number, cantidad: number, cantidad_minima: number, iva: number, retencion: number, categoria: number) {
         this.nombre = nombre;
         this.precio = precio;
         this.cantidad = cantidad;
         this.cantidad_minima = cantidad_minima;
         this.iva = iva;
         this.retencion = retencion;
-        this.idCategoria = idCategoria;
+        this.categoria = categoria;
     }
 
 
