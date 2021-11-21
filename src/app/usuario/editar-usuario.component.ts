@@ -25,8 +25,8 @@ export class EditarUsuarioComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params.id;
     this.usuarioService.detail(id).subscribe(
       data => {
+        console.log(data);
         this.usuario = data;
-      
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
